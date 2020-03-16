@@ -6,9 +6,9 @@ package cursojava.classes;
 public class Aluno {
 
 	// Atributos da classe Aluno
-	String nome;
-	int idade;
-	String dataNascimento;
+	public String nome;
+	public int idade;
+	public String dataNascimento;
 	String registroGeral;
 	String numeroCpf;
 	String nomeMae;
