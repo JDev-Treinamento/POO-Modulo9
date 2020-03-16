@@ -5,6 +5,7 @@ package cursojava.classes;
  */
 public class Aluno {
 
+	// Atributos da classe Aluno
 	String nome;
 	int idade;
 	String dataNascimento;

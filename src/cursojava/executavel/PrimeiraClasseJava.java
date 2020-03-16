@@ -9,6 +9,8 @@ public class PrimeiraClasseJava {
 	 */
 	public static void main(String[] args) {
 		
+		// new Aluno() é uma instância da classe Aluno (criação do objeto)
+		// aluno1 é uma referência para o objeto
 		Aluno aluno1 = new Aluno(); // João
 		
 		Aluno aluno2 = new Aluno(); // Pedro
