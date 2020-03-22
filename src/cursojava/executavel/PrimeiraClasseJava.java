@@ -16,6 +16,7 @@ public class PrimeiraClasseJava {
 		
 		Aluno aluno1 = new Aluno(); // João
 		
+		// Dados do aluno1
 		aluno1.setNome("João da Silva");
 		aluno1.setIdade(50);
 		aluno1.setDataNascimento("18/10/1987");
@@ -27,15 +28,23 @@ public class PrimeiraClasseJava {
 		aluno1.setSerieMatriculado("5");
 		aluno1.setNomeEscola("Escola JDEV Treinamento");
 		
+		// Notas do aluno1
+		aluno1.setNota1(90);
+		aluno1.setNota2(80.8);
+		aluno1.setNota3(70.9);
+		aluno1.setNota4(90.7);
+		
 		System.out.println("Nome do aluno 1 é: " + aluno1.getNome());
 		System.out.println("Idade do aluno 1 é: " + aluno1.getIdade());
 		System.out.println("Nascimento do aluno 1 é: " + aluno1.getDataNascimento());
+		System.out.println("Média das notas do aluno 1 é: " + aluno1.getMediaNota());
 		// ======================================================================
 		
 		System.out.println("===================== ALUNO 2 =======================");
 		
 		Aluno aluno2 = new Aluno(); // Pedro
 		
+		// Dados do aluno2
 		aluno2.setNome("Pedro");
 		aluno2.setIdade(40);
 		aluno2.setDataNascimento("10/10/1970");
