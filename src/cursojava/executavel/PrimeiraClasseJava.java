@@ -51,15 +51,10 @@ public class PrimeiraClasseJava {
 		aluno1.setNota1(Double.parseDouble(nota1));
 		aluno1.setNota2(Double.parseDouble(nota2));
 		aluno1.setNota3(Double.parseDouble(nota3));
-		aluno1.setNota4(Double.parseDouble(nota4));		
+		aluno1.setNota4(Double.parseDouble(nota4));				
 		
-		// Informações do aluno, impressas no console
-		System.out.println("Nome do aluno 1 é: " + aluno1.getNome());
-		System.out.println("Idade do aluno 1 é: " + aluno1.getIdade());
-		System.out.println("Nome da mãe do aluno 1 é: " + aluno1.getNomeMae());
-		System.out.println("Nascimento do aluno 1 é: " + aluno1.getDataNascimento());
+		System.out.println(aluno1); // Representação textual do objeto
 		System.out.println("Média das notas do aluno 1 é: " + aluno1.getMediaNota());
-		System.out.println("Resultado BOOLEAN: " + (aluno1.getAlunoAprovadoBoolean() ? "Aprovado" : "Reprovado"));
 		System.out.println("Resultado STRING: " + aluno1.getAlunoAprovadoString());
 	}
 
