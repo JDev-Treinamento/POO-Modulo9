@@ -157,5 +157,25 @@ public class Aluno {
 	public double getMediaNota() {
 		return (nota1 + nota2 + nota3 + nota4) / 4;
 	}
+	
+	// Método que retorna se o aluno foi aprovado ou não (BOOLEAN)
+	public boolean getAlunoAprovadoBoolean() {
+		double media = this.getMediaNota();
+		if (media >= 70) {
+			return true;
+		} else {
+			return false;			
+		}
+	}
+	
+	// Método que retorna se o aluno foi aprovado ou não (STRING)
+	public String getAlunoAprovadoString() {
+		double media = this.getMediaNota();
+		if (media >= 70) {
+			return "Muito bem! O aluno foi aprovado! :)";
+		} else {
+			return "Que pena! O aluno foi reprovado! :(";			
+		}
+	}
 
 }
