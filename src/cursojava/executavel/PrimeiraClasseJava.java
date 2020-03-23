@@ -15,6 +15,8 @@ public class PrimeiraClasseJava {
 		System.out.println("===================== ALUNO 1 =======================");		
 		Aluno aluno1 = new Aluno(); // João
 		
+		//Aluno aluno1 = null; -> Declaração que lança a exceção 'NullPointerException'
+		
 		// Dados do aluno1
 		aluno1.setNome("João da Silva");
 		aluno1.setIdade(50);
