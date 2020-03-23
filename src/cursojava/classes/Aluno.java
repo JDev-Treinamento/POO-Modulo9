@@ -16,7 +16,7 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	
+
 	// Notas do aluno
 	private double nota1;
 	private double nota2;
@@ -40,11 +40,11 @@ public class Aluno {
 	}
 
 	// Métodos Setters e Getters
-	// SET - Atribui valor aos atributos | GET - recupera o valor dos atributos	
+	// SET - Atribui valor aos atributos | GET - recupera o valor dos atributos
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -151,30 +151,30 @@ public class Aluno {
 
 	public void setNota4(double nota4) {
 		this.nota4 = nota4;
-	}	
-	
+	}
+
 	// Método que calcula e retorna a média das notas do aluno
 	public double getMediaNota() {
 		return (nota1 + nota2 + nota3 + nota4) / 4;
 	}
-	
+
 	// Método que retorna se o aluno foi aprovado ou não (BOOLEAN)
 	public boolean getAlunoAprovadoBoolean() {
 		double media = this.getMediaNota();
 		if (media >= 70) {
 			return true;
 		} else {
-			return false;			
+			return false;
 		}
 	}
-	
+
 	// Método que retorna se o aluno foi aprovado ou não (STRING)
 	public String getAlunoAprovadoString() {
 		double media = this.getMediaNota();
 		if (media >= 70) {
 			return "Muito bem! O aluno foi aprovado! :)";
 		} else {
-			return "Que pena! O aluno foi reprovado! :(";			
+			return "Que pena! O aluno foi reprovado! :(";
 		}
 	}
 
@@ -185,6 +185,37 @@ public class Aluno {
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
 				+ serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4
 				+ "]";
-	}	
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((numeroCpf == null) ? 0 : numeroCpf.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (numeroCpf == null) {
+			if (other.numeroCpf != null)
+				return false;
+		} else if (!numeroCpf.equals(other.numeroCpf))
+			return false;
+		return true;
+	}
 
 }

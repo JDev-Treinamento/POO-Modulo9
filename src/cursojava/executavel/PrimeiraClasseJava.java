@@ -56,6 +56,21 @@ public class PrimeiraClasseJava {
 		System.out.println(aluno1); // Representação textual do objeto
 		System.out.println("Média das notas do aluno 1 é: " + aluno1.getMediaNota());
 		System.out.println("Resultado STRING: " + aluno1.getAlunoAprovadoString());
+		
+		// Métodos equals e hashCode (comparação de objetos)
+		Aluno aluno01 = new Aluno();
+		aluno01.setNome("Alex");
+		aluno01.setNumeroCpf("123");
+		
+		Aluno aluno02 = new Aluno();
+		aluno02.setNome("Alex");
+		aluno02.setNumeroCpf("1234");
+		
+		if (aluno01.equals(aluno02)) {
+			System.out.println("Alunos são iguais!");
+		} else {
+			System.out.println("Alunos são diferentes!");
+		}		
 	}
 
 }
