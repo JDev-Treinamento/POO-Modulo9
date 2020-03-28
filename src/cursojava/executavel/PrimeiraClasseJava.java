@@ -26,10 +26,17 @@ public class PrimeiraClasseJava {
 		String serieMatriculado = JOptionPane.showInputDialog("Digite a série do aluno:");
 		String nomeEscola = JOptionPane.showInputDialog("Digite o nome da escola do aluno:");
 		
-		// Entrada de dados com o teclado (Notas do aluno)
+		// Entrada de dados com o teclado (Notas e disciplinas do aluno)
+		String disciplina1 = JOptionPane.showInputDialog("Digite o valor da 1º disciplina:");
 		String nota1 = JOptionPane.showInputDialog("Digite o valor da 1º nota:");
+		
+		String disciplina2 = JOptionPane.showInputDialog("Digite o valor da 2º disciplina:");
 		String nota2 = JOptionPane.showInputDialog("Digite o valor da 2º nota:");
+		
+		String disciplina3 = JOptionPane.showInputDialog("Digite o valor da 3º disciplina:");
 		String nota3 = JOptionPane.showInputDialog("Digite o valor da 3º nota:");
+		
+		String disciplina4 = JOptionPane.showInputDialog("Digite o valor da 4º disciplina:");
 		String nota4 = JOptionPane.showInputDialog("Digite o valor da 4º nota:");		
 		
 		System.out.println("===================== ALUNO 1 =======================");	
@@ -47,30 +54,19 @@ public class PrimeiraClasseJava {
 		aluno1.setSerieMatriculado(serieMatriculado);
 		aluno1.setNomeEscola(nomeEscola);
 		
-		// Notas do aluno1
-		aluno1.setNota1(Double.parseDouble(nota1));
+		// Notas e disciplinas do aluno1
+		aluno1.setNota1(Double.parseDouble(nota1));		
 		aluno1.setNota2(Double.parseDouble(nota2));
 		aluno1.setNota3(Double.parseDouble(nota3));
-		aluno1.setNota4(Double.parseDouble(nota4));				
+		aluno1.setNota4(Double.parseDouble(nota4));
+		aluno1.setDisciplina1(disciplina1);
+		aluno1.setDisciplina2(disciplina2);
+		aluno1.setDisciplina3(disciplina3);
+		aluno1.setDisciplina4(disciplina4);
 		
 		System.out.println(aluno1); // Representação textual do objeto
 		System.out.println("Média das notas do aluno 1 é: " + aluno1.getMediaNota());
-		System.out.println("Resultado STRING: " + aluno1.getAlunoAprovadoString());
-		
-		// Métodos equals e hashCode (comparação de objetos)
-		Aluno aluno01 = new Aluno();
-		aluno01.setNome("Alex");
-		aluno01.setNumeroCpf("123");
-		
-		Aluno aluno02 = new Aluno();
-		aluno02.setNome("Alex");
-		aluno02.setNumeroCpf("1234");
-		
-		if (aluno01.equals(aluno02)) {
-			System.out.println("Alunos são iguais!");
-		} else {
-			System.out.println("Alunos são diferentes!");
-		}		
+		System.out.println("Resultado STRING: " + aluno1.getAlunoAprovadoString());		
 	}
 
 }
