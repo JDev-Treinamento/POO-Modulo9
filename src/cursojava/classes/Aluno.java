@@ -130,14 +130,14 @@ public class Aluno {
 	}
 
 	// Método que calcula e retorna a média das notas do aluno
-	public double getMediaNota() {		
-		
-		double somaNotas = 0.0;		
-		
+	public double getMediaNota() {
+
+		double somaNotas = 0.0;
+
 		for (Disciplina disiplina : disciplinas) {
 			somaNotas += disiplina.getNota();
-		}		
-		
+		}
+
 		return somaNotas / disciplinas.size();
 	}
 
@@ -166,7 +166,7 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + "]";
+				+ serieMatriculado + ", disciplinas=" + disciplinas + "]";
 	}
 
 	@Override

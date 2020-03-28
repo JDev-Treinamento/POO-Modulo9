@@ -28,7 +28,7 @@ public class PrimeiraClasseJava {
 		String nomeEscola = JOptionPane.showInputDialog("Digite o nome da escola do aluno:");				
 		
 		System.out.println("===================== ALUNO 1 =======================");	
-		Aluno aluno1 = new Aluno(); // João		
+		Aluno aluno1 = new Aluno();
 		
 		// Dados do aluno1
 		aluno1.setNome(nome);
@@ -42,26 +42,17 @@ public class PrimeiraClasseJava {
 		aluno1.setSerieMatriculado(serieMatriculado);
 		aluno1.setNomeEscola(nomeEscola);
 		
-		Disciplina disciplina1 = new Disciplina();
-		disciplina1.setDisciplina("Banco de Dados");
-		disciplina1.setNota(90);		
-		
-		Disciplina disciplina2 = new Disciplina();
-		disciplina2.setDisciplina("Matemática");
-		disciplina2.setNota(80);		
-		
-		Disciplina disciplina3 = new Disciplina();
-		disciplina3.setDisciplina("Geografia");
-		disciplina3.setNota(97);		
-		
-		Disciplina disciplina4 = new Disciplina();
-		disciplina4.setDisciplina("Java Web");
-		disciplina4.setNota(70);
-		
-		aluno1.getDisciplinas().add(disciplina1);
-		aluno1.getDisciplinas().add(disciplina2);
-		aluno1.getDisciplinas().add(disciplina3);
-		aluno1.getDisciplinas().add(disciplina4);		
+		for (int pos = 1; pos <= 4; pos++) {
+			
+			String nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da " + pos + "º disciplina:");
+			String notaDisciplina = JOptionPane.showInputDialog("Digite a nota da " + pos + "º disciplina:");
+			
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisciplina));
+			
+			aluno1.getDisciplinas().add(disciplina);
+		}
 		
 		System.out.println(aluno1); // Representação textual do objeto
 		System.out.println("Média das notas do aluno 1 é: " + aluno1.getMediaNota());
