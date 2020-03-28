@@ -1,5 +1,8 @@
 package cursojava.classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Classe que representa um Aluno
  */
@@ -17,8 +20,8 @@ public class Aluno {
 	private String nomeEscola;
 	private String serieMatriculado;
 
-	// Objeto que contém as disciplinas e notas do aluno
-	private Disciplina disciplina = new Disciplina();
+	// Objeto que contém a lista de disciplinas e notas do aluno
+	private List<Disciplina> disciplinas = new ArrayList<>();
 
 	// Construtor vazio do objeto (padrão)
 	public Aluno() {
@@ -118,17 +121,17 @@ public class Aluno {
 		this.serieMatriculado = serieMatriculado;
 	}
 
-	public Disciplina getDisciplina() {
-		return disciplina;
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
 
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
 
 	// Método que calcula e retorna a média das notas do aluno
 	public double getMediaNota() {
-		return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
+		return 0;
 	}
 
 	// Método que retorna se o aluno foi aprovado ou não (BOOLEAN)
@@ -156,7 +159,7 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", disciplina=" + disciplina + "]";
+				+ serieMatriculado + "]";
 	}
 
 	@Override
