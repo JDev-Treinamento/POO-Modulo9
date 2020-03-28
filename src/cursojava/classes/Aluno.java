@@ -130,8 +130,15 @@ public class Aluno {
 	}
 
 	// Método que calcula e retorna a média das notas do aluno
-	public double getMediaNota() {
-		return 0;
+	public double getMediaNota() {		
+		
+		double somaNotas = 0.0;		
+		
+		for (Disciplina disiplina : disciplinas) {
+			somaNotas += disiplina.getNota();
+		}		
+		
+		return somaNotas / disciplinas.size();
 	}
 
 	// Método que retorna se o aluno foi aprovado ou não (BOOLEAN)
