@@ -17,7 +17,7 @@ public class PrimeiraClasseJava {
 		
 		List<Aluno> alunos = new ArrayList<>();
 		
-		for(int qtd = 1; qtd <= 2; qtd++) {
+		for(int qtd = 1; qtd <= 1; qtd++) {
 			
 			// new Aluno() é uma instância da classe Aluno (criação do objeto)
 			// aluno1 é uma referência para o objeto
@@ -79,24 +79,16 @@ public class PrimeiraClasseJava {
 			alunos.add(aluno1);
 		}
 		
-		for (Aluno aluno : alunos) {			
-			if (aluno.getNome().equalsIgnoreCase("alex")) {				
-				alunos.remove(aluno);				
-				break;
-			} else {
-				System.out.println(aluno); // Representação textual do objeto
-				System.out.println("Média das notas do aluno 1 é: " + aluno.getMediaNota());
-				System.out.println("Resultado STRING: " + aluno.getAlunoAprovadoString());
-				System.out.println("=====================================================");
-			}
-		}
-		
-		for (Aluno aluno : alunos) {
-			System.out.println("Alunos remanescentes na lista:");
-			System.out.println(aluno.getNome());
-			System.out.println("Disciplinas dos alunos remanescentes:");
-			for (Disciplina discplina : aluno.getDisciplinas()) {
-				System.out.println(discplina.getDisciplina());
+		for (int pos = 0; pos < alunos.size(); pos ++) {
+			Aluno aluno = alunos.get(pos);
+			System.out.println("Aluno: " + aluno.getNome());
+			System.out.println("Média do Aluno: " + aluno.getMediaNota());
+			System.out.println("Resultado: " + aluno.getAlunoAprovadoString());
+			System.out.println("============================================");
+			
+			for (int posDisc = 0; posDisc < aluno.getDisciplinas().size(); posDisc ++) {
+				Disciplina disciplina = aluno.getDisciplinas().get(posDisc);
+				System.out.println("Disciplina: " + disciplina.getDisciplina() + " - " + "Nota: " + disciplina.getNota());
 			}
 		}
 	}
