@@ -23,43 +23,33 @@ public class PrimeiraClasseJava {
 			JOptionPane.showMessageDialog(null, "Acesso liberado ao sistema! Pressione OK!");
 
 			List<Aluno> alunos = new ArrayList<>();
-
 			HashMap<String, List<Aluno>> maps = new HashMap<>();
 
 			for (int qtd = 1; qtd <= 1; qtd++) {
 
-				String nome = JOptionPane.showInputDialog("Digite o nome do aluno " + qtd + " :");
-				/*
-				 * String idade = JOptionPane.showInputDialog("Digite a idade do aluno:");
-				 * String dataNascimento =
-				 * JOptionPane.showInputDialog("Digite a data de nascimento do aluno:"); String
-				 * rg = JOptionPane.showInputDialog("Digite o RG do aluno:"); String cpf =
-				 * JOptionPane.showInputDialog("Digite o CPF do aluno:"); String nomeMae =
-				 * JOptionPane.showInputDialog("Digite o nome da mãe do aluno:"); String nomePai
-				 * = JOptionPane.showInputDialog("Digite o nome do pai do aluno:"); String
-				 * dataMatricula =
-				 * JOptionPane.showInputDialog("Digite a data da matrícula do aluno:"); String
-				 * serieMatriculado = JOptionPane.showInputDialog("Digite a série do aluno:");
-				 * String nomeEscola =
-				 * JOptionPane.showInputDialog("Digite o nome da escola do aluno:");
-				 */
+				String nome = JOptionPane.showInputDialog("Digite o nome do aluno " + qtd + " :");				
+				String idade = JOptionPane.showInputDialog("Digite a idade do aluno:");
+				String dataNascimento = JOptionPane.showInputDialog("Digite a data de nascimento do aluno:"); 
+				String rg = JOptionPane.showInputDialog("Digite o RG do aluno:"); 
+				String cpf = JOptionPane.showInputDialog("Digite o CPF do aluno:");
+				String nomeMae = JOptionPane.showInputDialog("Digite o nome da mãe do aluno:");
+				String nomePai = JOptionPane.showInputDialog("Digite o nome do pai do aluno:");
+				String dataMatricula = JOptionPane.showInputDialog("Digite a data da matrícula do aluno:");
+				String serieMatriculado = JOptionPane.showInputDialog("Digite a série do aluno:");
+				String nomeEscola = JOptionPane.showInputDialog("Digite o nome da escola do aluno:");				 
 
 				Aluno aluno1 = new Aluno();
-
 				aluno1.setNome(nome);
-				/*
-				 * aluno1.setIdade(Integer.valueOf(idade));
-				 * aluno1.setDataNascimento(dataNascimento); aluno1.setRegistroGeral(rg);
-				 * aluno1.setNumeroCpf(cpf); aluno1.setNomeMae(nomeMae);
-				 * aluno1.setNomePai(nomePai); aluno1.setDataMatricula(dataMatricula);
-				 * aluno1.setSerieMatriculado(serieMatriculado);
-				 * aluno1.setNomeEscola(nomeEscola);
-				 */
+				aluno1.setIdade(Integer.valueOf(idade));
+				aluno1.setDataNascimento(dataNascimento); aluno1.setRegistroGeral(rg);
+				aluno1.setNumeroCpf(cpf); aluno1.setNomeMae(nomeMae);
+				aluno1.setNomePai(nomePai); aluno1.setDataMatricula(dataMatricula);
+				aluno1.setSerieMatriculado(serieMatriculado);
+				aluno1.setNomeEscola(nomeEscola);				
 
-				for (int pos = 1; pos <= 2; pos++) {
+				for (int pos = 1; pos <= 2; pos++) {					
 					String nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da " + pos + "º disciplina:");
 					String notaDisciplina = JOptionPane.showInputDialog("Digite a nota da " + pos + "º disciplina:");
-
 					Disciplina disciplina = new Disciplina();
 					disciplina.setNome(nomeDisciplina);
 					disciplina.setNota(Double.valueOf(notaDisciplina));
@@ -143,8 +133,7 @@ public class PrimeiraClasseJava {
 			}
 			System.out.println("==============================");
 		} else {
-			JOptionPane.showMessageDialog(null,
-					"Login ou senha inválido(s)! Acesso não autorizado! Pressione OK e tente novamente!");
+			JOptionPane.showMessageDialog(null, "Login ou senha inválido(s)! Acesso não autorizado! Pressione OK e tente novamente!");
 		}
 	}
 
