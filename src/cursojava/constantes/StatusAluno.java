@@ -1,13 +1,13 @@
 package cursojava.constantes;
 
 public class StatusAluno {
-
-	// Constantes (acessadas de forma estática)
 	
-	public static String APROVADO = "Muito bem! O aluno foi aprovado! :)";
+	private StatusAluno() { }
 	
-	public static String REPROVADO = "Que pena! O aluno foi reprovado! :(";
+	public static final String APROVADO = "Muito bem! O aluno foi aprovado! :)";
 	
-	public static String RECUPERACAO = "Alerta! Aluno em recuperação!";
+	public static final String REPROVADO = "Que pena! O aluno foi reprovado! :(";
+	
+	public static final String RECUPERACAO = "Alerta! Aluno em recuperação!";
 
 }
