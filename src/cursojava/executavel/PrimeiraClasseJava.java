@@ -1,6 +1,7 @@
 package cursojava.executavel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -16,11 +17,10 @@ public class PrimeiraClasseJava {
 	 */
 	public static void main(String[] args) {
 		
-		List<Aluno> alunos = new ArrayList<>();
+		List<Aluno> alunos = new ArrayList<>();		
 		
-		List<Aluno> alunosAprovados = new ArrayList<>();
-		List<Aluno> alunosRecuperacao = new ArrayList<>();
-		List<Aluno> alunosReprovados = new ArrayList<>();
+		// Estrutua de dados que representa os elementos por uma chave e um valor associado à chave
+		HashMap<String, List<Aluno>> maps = new HashMap<>();
 		
 		for(int qtd = 1; qtd <= 5; qtd ++) {
 			
@@ -29,7 +29,7 @@ public class PrimeiraClasseJava {
 			
 			// Entrada de dados com o teclado (Dados do aluno)
 			String nome = JOptionPane.showInputDialog("Digite o nome do aluno " + qtd + " :");
-			String idade = JOptionPane.showInputDialog("Digite a idade do aluno:");
+			/*String idade = JOptionPane.showInputDialog("Digite a idade do aluno:");
 			String dataNascimento = JOptionPane.showInputDialog("Digite a data de nascimento do aluno:");
 			String rg = JOptionPane.showInputDialog("Digite o RG do aluno:");
 			String cpf = JOptionPane.showInputDialog("Digite o CPF do aluno:");
@@ -37,13 +37,13 @@ public class PrimeiraClasseJava {
 			String nomePai = JOptionPane.showInputDialog("Digite o nome do pai do aluno:");
 			String dataMatricula = JOptionPane.showInputDialog("Digite a data da matrícula do aluno:");
 			String serieMatriculado = JOptionPane.showInputDialog("Digite a série do aluno:");
-			String nomeEscola = JOptionPane.showInputDialog("Digite o nome da escola do aluno:");				
+			String nomeEscola = JOptionPane.showInputDialog("Digite o nome da escola do aluno:");	*/			
 			
 			Aluno aluno1 = new Aluno();
 			
 			// Dados do aluno1
 			aluno1.setNome(nome);
-			aluno1.setIdade(Integer.valueOf(idade));
+			/*aluno1.setIdade(Integer.valueOf(idade));
 			aluno1.setDataNascimento(dataNascimento);
 			aluno1.setRegistroGeral(rg);
 			aluno1.setNumeroCpf(cpf);
@@ -51,7 +51,7 @@ public class PrimeiraClasseJava {
 			aluno1.setNomePai(nomePai);
 			aluno1.setDataMatricula(dataMatricula);
 			aluno1.setSerieMatriculado(serieMatriculado);
-			aluno1.setNomeEscola(nomeEscola);
+			aluno1.setNomeEscola(nomeEscola);*/
 			
 			for (int pos = 1; pos <= 1; pos++) {
 				
@@ -83,19 +83,23 @@ public class PrimeiraClasseJava {
 			alunos.add(aluno1);
 		}
 		
+		maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.REPROVADO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.RECUPERACAO, new ArrayList<Aluno>());
+		
 		for (Aluno aluno: alunos) {			
 			if (aluno.getAlunoAprovadoString().equalsIgnoreCase(StatusAluno.APROVADO)) {
-				alunosAprovados.add(aluno);
+				maps.get(StatusAluno.APROVADO).add(aluno);
 			} else if (aluno.getAlunoAprovadoString().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
-				alunosRecuperacao.add(aluno);
+				maps.get(StatusAluno.RECUPERACAO).add(aluno);
 			} else if (aluno.getAlunoAprovadoString().equalsIgnoreCase(StatusAluno.REPROVADO)) {
-				alunosReprovados.add(aluno);
+				maps.get(StatusAluno.REPROVADO).add(aluno);
 			}
 		}
 		
 		System.out.println("Lista dos alunos APROVADOS! :)");
 		System.out.println("==============================");
-		for (Aluno aluno: alunosAprovados) {	
+		for (Aluno aluno: maps.get(StatusAluno.APROVADO)) {	
 			System.out.println("Nome: " + aluno.getNome());
 			System.out.println("Média: " + aluno.getMediaNota());
 			System.out.println("--------------------------");
@@ -104,7 +108,7 @@ public class PrimeiraClasseJava {
 		
 		System.out.println("Lista dos alunos REPROVADOS! :(");
 		System.out.println("==============================");
-		for (Aluno aluno: alunosReprovados) {	
+		for (Aluno aluno: maps.get(StatusAluno.REPROVADO)) {	
 			System.out.println("Nome: " + aluno.getNome());
 			System.out.println("Média: " + aluno.getMediaNota());
 			System.out.println("--------------------------");
@@ -113,7 +117,7 @@ public class PrimeiraClasseJava {
 		
 		System.out.println("Lista dos alunos em RECUPERAÇÃO! ^ | ^");
 		System.out.println("==============================");
-		for (Aluno aluno: alunosRecuperacao) {	
+		for (Aluno aluno: maps.get(StatusAluno.RECUPERACAO)) {	
 			System.out.println("Nome: " + aluno.getNome());
 			System.out.println("Média: " + aluno.getMediaNota());
 			System.out.println("--------------------------");
